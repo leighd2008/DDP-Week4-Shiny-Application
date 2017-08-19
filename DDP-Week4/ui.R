@@ -10,13 +10,13 @@
 library(shiny)
 
 # Define UI for application that explores CO2 uptake data from plants.
-navbarPage("CO2 Uptake by plants",
+navbarPage("Carbon Dioxide Uptake in Grass Plants",
    tabPanel("Exploratory Plots",
       # Sidebar with radio buttons to choose location of plant(Quebec or Mississippi) 
       sidebarLayout(
          sidebarPanel(
             radioButtons("location", label = 
-               h3("Choose to see the data from Quebec, Mississippi or Both together."),
+               h3("Choose to see the data from Mississippi, Quebec or Both together."),
                   choices = list("Mississippi"= 1,"Quebec"= 2,  "Both"= 3), selected = 3),
                h3("Lines"),
                helpText("The lines represent the best polynomial regression fit for each 
@@ -36,13 +36,15 @@ navbarPage("CO2 Uptake by plants",
                             like to explore?", 0, 1000, value = 500)
                 ),
         mainPanel(
-          HTML(paste(tags$h5("Predicted CO ", tags$sup(2), " uptake for plants in Mississippi that have been chilled:"))),
+          HTML(paste(tags$h3("Predicted CO ", tags$sup(2), " uptake for plants 
+                  at the ambient CO^2 concentration specified using the slider."))),
+          h4("Mississippi  plants that have been chilled:"),
           textOutput("pred1"),
-          HTML(paste(tags$h5("Predicted CO ", tags$sup(2), " uptake for plants in Mississippi that have not been chilled:"))),
+          h4("Mississippi  plants that have not been chilled:"),
           textOutput("pred2"),
-          HTML(paste(tags$h5("Predicted CO ", tags$sup(2), " uptake for plants in Quebec that have been chilled:"))),
+          h4("Quebec  plants that have been chilled:"),
           textOutput("pred3"),
-          HTML(paste(tags$h5("Predicted CO ", tags$sup(2), " uptake for plants in Quebec that have not been chilled:"))),
+          h4("Quebec  plants that have not been chilled:"),
           textOutput("pred4")
         )
    )
