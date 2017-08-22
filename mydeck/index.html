@@ -46,7 +46,7 @@
     <h2>Carbon Dioxide Uptake in Grass Plants - App</h2>
   </hgroup>
   <article data-timings="">
-    <p>The Carbon Dioxide Uptake in Grass Plants App allows the user to examine the difference in CO<sup>2</sup> uptake between Mississippi and Quebec, as well as between chilled and non-chilled plants.</p>
+    <p>The Carbon Dioxide (CO2) Uptake in Grass Plants App allows the user to examine the difference in CO2 uptake between Mississippi and Quebec, as well as between chilled and non-chilled plants.</p>
 
 <p>The APP can be found at <a href="https://leighd2008.shinyapps.io/DDP-Week4/">https://leighd2008.shinyapps.io/DDP-Week4/</a>.</p>
 
@@ -61,7 +61,7 @@
     <h2>Carbon Dioxide Uptake in Grass Plants - Data</h2>
   </hgroup>
   <article data-timings="">
-    <p>The CO<sup>2</sup> uptake of six plants from Quebec and six plants from Mississippi was measured at several levels of ambient CO<sup>2</sup> concentration. Half the plants of each type were chilled overnight before the experiment was conducted.</p>
+    <p>The CO2, uptake of six plants from Quebec and six plants from Mississippi was measured at several levels of ambient CO2 concentration. Half the plants of each type were chilled overnight before the experiment was conducted.</p>
 
 <p>Polynomial regression was used to fit a model for each of the four Location - Treatment conditions.</p>
 
@@ -109,7 +109,7 @@
     <h2>Carbon Dioxide Uptake in Grass Plants - Prediction</h2>
   </hgroup>
   <article data-timings="">
-    <p>The prediction tab allows provides a slider bar for the user to choose an ambient CO<sup>2</sup> concentration and then displays the CO<sup>2</sup> uptake for each of the four Location - Treatment groups based on their individual model fit.</p>
+    <p>The prediction tab allows provides a slider bar for the user to choose an ambient CO2 concentration and then displays the CO2 uptake for each of the four Location - Treatment groups based on their individual model fit.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -153,7 +153,21 @@
 </body>
   <!-- Load Javascripts for Widgets -->
   
-  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
   <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <!-- DONE LOADING HIGHLIGHTER JS FILES -->
