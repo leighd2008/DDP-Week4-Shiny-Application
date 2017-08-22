@@ -43,10 +43,25 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
+    <h2>Carbon Dioxide Uptake in Grass Plants - App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The Carbon Dioxide Uptake in Grass Plants App allows the user to examine the difference in CO<sup>2</sup> uptake between Mississippi and Quebec, as well as between chilled and non-chilled plants.</p>
+
+<p>The APP can be found at <a href="https://leighd2008.shinyapps.io/DDP-Week4/">https://leighd2008.shinyapps.io/DDP-Week4/</a>.</p>
+
+<p>The R code and documentation can be found at: <a href="https://github.com/leighd2008/DDP-Week4-Shiny-Application">https://github.com/leighd2008/DDP-Week4-Shiny-Application</a>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
     <h2>Carbon Dioxide Uptake in Grass Plants - Data</h2>
   </hgroup>
   <article data-timings="">
-    <p>The CO2 uptake of six plants from Quebec and six plants from Mississippi was measured at several levels of ambient CO<sup>2</sup> concentration. Half the plants of each type were chilled overnight before the experiment was conducted.</p>
+    <p>The CO<sup>2</sup> uptake of six plants from Quebec and six plants from Mississippi was measured at several levels of ambient CO<sup>2</sup> concentration. Half the plants of each type were chilled overnight before the experiment was conducted.</p>
 
 <p>Polynomial regression was used to fit a model for each of the four Location - Treatment conditions.</p>
 
@@ -61,20 +76,41 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-2" style="background:;">
+<slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>Carbon Dioxide Uptake in Grass Plants - App</h2>
+    <h2>Carbon Dioxide Uptake in Grass Plants - Model fit</h2>
   </hgroup>
   <article data-timings="">
-    <p>The Carbon Dioxide Uptake in Grass Plants App allows the user to examine the difference in \(CO^{2}\) uptake between Mississippi and Quebec, as well as between chilled and non-chilled plants</p>
+    <p>ANOVA output for polynomial regression fit. The highest order fit showing significance for each Location - Treatment group was choosen as the model</p>
+
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: uptake ~ conc
+## Model 2: uptake ~ poly(conc, 2)
+## Model 3: uptake ~ poly(conc, 3)
+## Model 4: uptake ~ poly(conc, 4)
+## Model 5: uptake ~ poly(conc, 5)
+##   Res.Df    RSS Df Sum of Sq       F    Pr(&gt;F)    
+## 1     19 835.48                                   
+## 2     18 431.80  1    403.68 42.3087 9.952e-06 ***
+## 3     17 172.66  1    259.14 27.1605 0.0001054 ***
+## 4     16 145.88  1     26.78  2.8063 0.1146123    
+## 5     15 143.12  1      2.76  0.2896 0.5983566    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+</code></pre>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-3" style="background:;">
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Carbon Dioxide Uptake in Grass Plants - Prediction</h2>
+  </hgroup>
   <article data-timings="">
-    
+    <p>The prediction tab allows provides a slider bar for the user to choose an ambient CO<sup>2</sup> concentration and then displays the CO<sup>2</sup> uptake for each of the four Location - Treatment groups based on their individual model fit.</p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -85,20 +121,26 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Carbon Dioxide Uptake in Grass Plants - Data'>
+        data-slide=1 title='Carbon Dioxide Uptake in Grass Plants - App'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Carbon Dioxide Uptake in Grass Plants - App'>
+        data-slide=2 title='Carbon Dioxide Uptake in Grass Plants - Data'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='NA'>
+        data-slide=3 title='Carbon Dioxide Uptake in Grass Plants - Model fit'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Carbon Dioxide Uptake in Grass Plants - Prediction'>
+         4
       </a>
     </li>
   </ul>

@@ -29,7 +29,7 @@ navbarPage("Carbon Dioxide Uptake in Grass Plants",
          )
       )
    ),
-   tabPanel("Predict",
+   tabPanel("Prediction",
       sidebarLayout(
         sidebarPanel(
           sliderInput("sliderCO2", "What ambient CO^2 concentration would you 

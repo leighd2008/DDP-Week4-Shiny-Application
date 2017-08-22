@@ -1,14 +1,24 @@
 ---
 title       : Carbon Dioxide Uptake in Grass Plants
 subtitle    : Reproducible Pitch Presentation
-author      : Diane Leigh
-job         : Student
+author      : "Diane Leigh"
+job         : "Student"
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
+
+---
+
+## Carbon Dioxide Uptake in Grass Plants - App
+
+The Carbon Dioxide Uptake in Grass Plants App allows the user to examine the difference in CO^2 uptake between Mississippi and Quebec, as well as between chilled and non-chilled plants.
+
+The APP can be found at https://leighd2008.shinyapps.io/DDP-Week4/.
+
+The R code and documentation can be found at: https://github.com/leighd2008/DDP-Week4-Shiny-Application.
 
 ---
 
@@ -22,20 +32,27 @@ Polynomial regression was used to fit a model for each of the four Location - Tr
 - Mississippi - Nonchilled
 - Quebec - Chilled
 - Quebec - Nonchilled
-
+```{r, prep_data, echo=FALSE}
+library(data.table)
+ds <- as.data.table(CO2)
+qbc <- ds[Type == "Quebec"]
+qbcch <- qbc[Treatment == "chilled"]
+```
 
 --- 
+## Carbon Dioxide Uptake in Grass Plants - Model fit
+ANOVA output for polynomial regression fit. The highest order fit showing significance for each Location - Treatment group was choosen as the model
+```{r, sample_model_fit, echo=FALSE}
+fit.1= lm(uptake~conc ,data=qbcch)
+fit.2= lm(uptake~poly(conc ,2) ,data=qbcch)
+fit.3= lm(uptake~poly(conc ,3) ,data=qbcch)
+fit.4= lm(uptake~poly(conc ,4) ,data=qbcch)
+fit.5= lm(uptake~poly(conc ,5) ,data=qbcch)
+anova(fit.1, fit.2, fit.3, fit.4, fit.5)
+```
 
-## Carbon Dioxide Uptake in Grass Plants - App
-
-The Carbon Dioxide Uptake in Grass Plants App allows the user to examine the difference in CO^2 uptake between Mississippi and Quebec, as well as between chilled and non-chilled plants.
-
-The APP can be found at https://leighd2008.shinyapps.io/DDP-Week4/.
-
-The R code and documentation can be found at: https://github.com/leighd2008/DDP-Week4-Shiny-Application.
-
----
-
-
+--- 
+## Carbon Dioxide Uptake in Grass Plants - Prediction
+The prediction tab allows provides a slider bar for the user to choose an ambient CO^2 concentration and then displays the CO^2 uptake for each of the four Location - Treatment groups based on their individual model fit.
 
 
