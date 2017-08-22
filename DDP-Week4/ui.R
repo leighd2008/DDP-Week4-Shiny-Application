@@ -22,7 +22,7 @@ navbarPage("Carbon Dioxide Uptake in Grass Plants",
                helpText("The lines represent the best polynomial regression fit for each 
                   location - treatment combination. This will allow us to predict 
                   an uptake value for a given ambient concentration of CO2 on the 
-                  Predict tab.")
+                  Prediction tab.")
          ),
          mainPanel(
             plotOutput("plot1")
